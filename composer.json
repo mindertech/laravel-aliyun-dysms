@@ -1,0 +1,48 @@
+{
+  "name": "mindertech/laravel-aliyun-dysms",
+  "description": "Aliyun SMS PHP SDK for Laravel",
+  "keywords": [
+    "aliyun",
+    "sms",
+    "sdk",
+    "laravel"
+  ],
+  "type": "library",
+  "license": "MIT",
+  "homepage": "https://github.com/mindertech/laravel-aliyun-dysms",
+  "authors": [
+    {
+      "name": "mindertech",
+      "homepage": "https://github.com/mindertech/laravel-aliyun-dysms"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.13",
+    "laravel/framework": ">=5.5.5"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "minimum-stability": "stable",
+  "autoload": {
+    "classmap": [
+      "src/Mindertech/Dysms/lib/dysms-sdk"
+    ],
+    "psr-4": {
+      "Mindertech\\Dysms\\": "src/Mindertech/Dysms"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mindertech\\Dysms\\MindertechDysmsServiceProvider"
+      ],
+      "aliases": {
+        "SendSms" : "Mindertech\\Dysms\\Facades\\SendSmsFacade",
+        "QuerySms" : "Mindertech\\Dysms\\Facades\\QuerySendDetailsFacade",
+        "SendSmsBatch" : "Mindertech\\Dysms\\Facades\\SendSmsBatchFacade",
+        "SmsQueue" : "Mindertech\\Dysms\\Facades\\SmsQueueFacade"
+      }
+    }
+  }
+}
